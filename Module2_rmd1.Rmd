@@ -3,9 +3,9 @@ title: "Module2 - Rmarkdown Document 1"
 author: "Prashant Dey"
 date: "11/9/2018"
 output:
-  pdf_document: default
-  word_document: default
   html_document: default
+  word_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -90,6 +90,7 @@ Here is an example of code in a blockquote:
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r cars}
+head(cars)
 summary(cars)
 ```
 
@@ -102,3 +103,27 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Package
+
+```{r}
+library(ggplot2)
+library(plotly)
+```
+
+## Figures
+```{r figure, fig.align='center'}
+cars %>% 
+  ggplot(aes(x = speed, y = dist))+
+  geom_point(aes(color = speed))+
+  geom_line(aes(color = dist))+
+  theme_minimal()
+```
+
+## Equation
+
+$$ Returns = Price_{t}/ Price_{t-1} - 1 $$ 
+
+or
+
+$$ Returns = \ln(\frac{Price_{t}}{Price_{t-1}})  $$ 
