@@ -3,8 +3,8 @@ title: "Module2 - Rmarkdown Document 1"
 author: "Prashant Dey"
 date: "11/9/2018"
 output:
-  html_document: default
   word_document: default
+  html_document: default
   pdf_document: default
 ---
 
@@ -127,3 +127,35 @@ $$ Returns = Price_{t}/ Price_{t-1} - 1 $$
 or
 
 $$ Returns = \ln(\frac{Price_{t}}{Price_{t-1}})  $$ 
+
+# Images, Vidoes using markdown syntax
+
+## Insert Images
+
+![Sunstar](sunstar.png)
+
+## Insert gif
+
+![sunstar_gif](sunstar.gif)
+
+## Insert Videos
+For HTML only
+![sunstar_vid](sunstar.mp4)
+
+# Images, Vidoes using knitr syntax
+```{r}
+knitr::include_graphics("./sunstar.png")
+```
+
+```{r}
+knitr::include_graphics("./sunstar.gif")
+```
+
+## Insert text with some footnotes
+
+Here is a footnote reference [^1] and another [^longnote]
+
+Here is an inline footnote ^[Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.]
+
+[^1]: Here is the footnote.
+[^longnote]: Here's one with multiple blocks.
